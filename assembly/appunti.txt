@@ -1,0 +1,118 @@
+    lab 1
+
+per compilare, linkare, eseguire
+
+as -o hello.o hello.s
+ld -o hello.x hello.o
+./hello.x
+
+codice compilato per sistemi 32 bit
+as prova1.s -32 -o prova1.o
+ld prova1.o -m elf_i386 -o prova1.x
+./prova1.x
+
+
+
+
+
+
+
+
+
+
+    lab 2
+
+make file -> programma (utility) che permette di automatizzare il flusso di compilazione 
+per creare eseguiblile -> linkare file oggetto 
+eseguibile dipende da file oggetto (.x) -> creare eseguibile (.o) -> che dipende dai .s
+
+
+        EXE = readstr -> nome del file che devo produrre
+        AS = as --32
+        LD = ld -m elf_i386
+
+FLAGS = una serie di flag che passo al compilatore per indicargli i compurtamenti, e hanno una serie di parametri
+
+debugger -> ha bisogno dei simboli di debug -> lasciare delle info all'interno su com'è fatto il file originale
+            il compilatore non lascia le info di debug
+            ↓
+            usare FLAGS = -gstabs
+
+        FLAGS = -gstabs
+
+il targhet eseguiblile dipende dl targhet oggetto
+diprnde da tutti i file linkati OBJ
+
+        OBJ = readstr.o
+
+        $(EXE): $(OBJ)
+            $(LD) -o $(EXE) $(OBJ)
+
+l'eseguibile str.o dipende dall'esistenza di str.s
+per ogni .s crea un .o
+
+        readstr.o: readstr.s
+            $(AS) $(FLAGS) -o readstr.o readstr.s
+
+
+ho finito progetto e 
+devo consegnare eseguibile e codice sorgente            
+essere sicuri di togliere tutto l'eseguibile ma che il codice sorgente funzioni
+comando che dice come cancellare in modo sicuro
+
+        clean:
+            rm -f *.o $(EXE) core
+
+________________________________________________________________________                
+
+script completo:    -> nome script -> makefile
+
+EXE = readstr -> nome del file che devo produrre
+AS = as --32
+LD = ld -m elf_i386
+FLAGS = -gstabs
+
+OBJ = readstr.o
+
+$(EXE): $(OBJ)
+    $(LD) -o $(EXE) $(OBJ)
+
+readstr.o: readstr.s
+    $(AS) $(FLAGS) -o readstr.o readstr.s  
+    
+clean:
+    rm -f *.o $(EXE) core
+
+________________________________________________________________________    
+
+
+debugger -> strumento che analizza istuzione per istruzione
+            ogni singola operazione che fa il calcolatore
+            
+            es. vedere se c'è veramente il valore che voglio in memoria
+            es. eseguire passo passo il programma
+
+            usiamo GDB (o CGDB -> grafica)
+
+            per il debugger conta solo il file oggetto
+            file -> carica il programma
+
+            GDS nome del programma
+
+            run [parametri] -> esegue
+            break str2num.s:40 -> si ferma alla riga che voglio (si ferma prima di eseguirla)
+                                                                (non possiamo pettere un breakpoint nella prima riga -> perché prima il programma non esiste ancora)
+
+
+
+
+
+
+
+
+
+
+
+    lab 3
+
+    lab 4

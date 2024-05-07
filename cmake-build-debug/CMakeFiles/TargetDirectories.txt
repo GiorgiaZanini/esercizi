@@ -1,3 +1,0 @@
-/home/giorgia/CLionProjects/esercizi_C/cmake-build-debug/CMakeFiles/untitled1.dir
-/home/giorgia/CLionProjects/esercizi_C/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/giorgia/CLionProjects/esercizi_C/cmake-build-debug/CMakeFiles/rebuild_cache.dir
