@@ -11,4 +11,11 @@ add_executable(untitled1 main.c
         countdoppie.c
         palindroma_rico.c
         monotona_rico.c
-        ordinamento.c)
+        ordinamento.c
+        esercizi_guidati/conta_num.c
+        esercizi_guidati/lista.c
+        liste1.c
+        liste2.c
+        liste3.c
+        lista4e.c
+        liste5e.c)
