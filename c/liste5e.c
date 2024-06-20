@@ -30,13 +30,36 @@ Completare il programma list.c rispettando le specifiche fornite nei commenti de
 
 /* Scopo di questa esercitazine e' la realizzazione delle funzioni segnate con [TODO] */
 
-#include <stdio.h>
+#include <<stdio.h>
 #include <stdlib.h>
 
 struct list {
     int val;
     struct list *next;
 };
+
+struct list *list_from_array(int v[], int n) {
+    struct list *testa = NULL;
+
+    if (n == 0) {
+        return testa;   // ritorna testa = NULL perché non ci sono elementi nell'array
+    }
+
+    testa = (struct list *) malloc(sizeof(struct list));      // creo il primo nodo
+    if (testa != NULL) {
+        testa->val = v[0];
+        testa->next = NULL;
+    }
+
+    struct list *ultimo_nodo = NULL;
+    struct list *nuovo_nodo = NULL;
+
+    for (int i = 1; i < n; i++) {       // se n = 1 non entra nel for
+        nuovo_nodo = (struct list*) malloc(sizeof(struct list));
+
+
+    }
+}
 
 /* Crea (mediante malloc() ) e restituisce un puntatore ad un nuovo nodo di una lista; il nodo contiene il valore v e punta a t come elemento successivo.
  * Il chiamante e' responsabile per deallocare mediante free() o simili la zona di memoria restituita da questa funzione, quando non piu' utilizzata */
@@ -162,13 +185,27 @@ struct list *list_reverse (struct list *L) {
     }
 
     tmp = L;
-    struct lista *nuova_testa = NULL;
+    struct list *nodo_precedente = NULL;
+    struct list *nuova_testa = NULL;
+    struct list *nuova_coda = nuova_testa;
     for (int i = count; i >= 0; i--) {
-        tmp = nth_element(tmp, i);
-        if (i > 0) {
 
+        if (i > 0) {
+            tmp = nth_element(L, i);
+
+            if (nuova_testa == NULL) {
+                nuova_testa = tmp;
+                nuova_coda = nuova_testa;
+            } else {
+                nuova_coda->next = tmp;
+                nuova_coda = nuova_coda->next;
+            }
+        } else {
+            nuova_coda->next = NULL;
         }
     }
+
+    return nuova_testa;
 }
 
 int main( void )
