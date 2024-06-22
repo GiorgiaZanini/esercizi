@@ -64,7 +64,9 @@
 				12,
 				13,
 				14,
-				15
+				15,
+				16,
+				17
 			]
 		}
 	],
@@ -112,7 +114,9 @@
 				12,
 				13,
 				14,
-				15
+				15,
+				16,
+				17
 			]
 		}
 	],
@@ -212,6 +216,18 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "liste5e.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "quiz/sim3_2.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "quiz/sim3_3.c",
 			"sourceGroupIndex" : 0
 		}
 	],

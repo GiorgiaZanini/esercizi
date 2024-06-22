@@ -18,4 +18,6 @@ add_executable(untitled1 main.c
         liste2.c
         liste3.c
         lista4e.c
-        liste5e.c)
+        liste5e.c
+        quiz/sim3_2.c
+        quiz/sim3_3.c)
