@@ -30,7 +30,7 @@ Completare il programma list.c rispettando le specifiche fornite nei commenti de
 
 /* Scopo di questa esercitazine e' la realizzazione delle funzioni segnate con [TODO] */
 
-#include <<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 struct list {

@@ -23,7 +23,7 @@ int anagramma(char*, char*);
 int dimmianagrammi(char*);
 
 int main(){
-	char str[DIM+1];
+    char str[DIM+1];
 	int num;
 	
 	scanf("%s",str);
@@ -33,33 +33,32 @@ int main(){
 
 
 int anagramma(char *s1, char *s2){
-    int flag = 0;
     int i, j;
-
-/*    for (i = 0, j = 0; s1[i] != '\0' || s2[j] != '\0'; i++, j++);
-    if ((s1[i] != s2[j]) && (s1[i] == '\0' || s2[j] == '\0')) {
-        return 0;
-    } */
-
+    int lettere[26] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
     for (i = 0; s1[i] != '\0'; i++);
     for (j = 0; s2[j] != '\0'; j++);
     if (i != j) {
         return 0;
     }
-       
 
-    for (i = 0; s1[i] != '\0'; i++) {
-        for (j = 0; s2[j] != '\0'; j++) {
-            if (s1[i] == s2[j]){
-                flag = 1;
+    for (i = 0; s1[i] != '\0'; i++) {       // scorro la stringa    (faccio il contrllo del terminatore solo sulla prima stringa perché hanno la stessa dimensione)
+        for (j = 0; j < 26; j++) {       // scorro l'array
+            if (s1[i] == j+'a') {
+                lettere[j] ++;
+            }
+            if (s2[i] == j+'a') {
+                lettere[j] --;
             }
         }
-        if (flag == 0) {
+    }
+
+    for (j = 0; j < 26; j++) {
+        if (lettere[j] != 0) {
             return 0;
         }
-        flag = 1;
     }
+
     return 1;
 }
 
@@ -68,7 +67,7 @@ int dimmianagrammi(char *str1){
     int a;
     int count = 0;
     char sf[26];
-    f = fopen("dizionario.txt", "r");
+    f = fopen("/home/giorgia/CLionProjects/esercizi/c/file/dizionario.txt", "r");
     if (f == NULL) {
         return -1;
     } 

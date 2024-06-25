@@ -20,4 +20,9 @@ add_executable(untitled1 main.c
         lista4e.c
         liste5e.c
         quiz/sim3_2.c
-        quiz/sim3_3.c)
+        quiz/sim3_3.c
+        quiz/quiz16.c
+        quiz/quiz17_1.c
+        quiz/quiz17_2.c
+        quiz/quiz17_3.c
+)

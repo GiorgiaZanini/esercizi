@@ -37,11 +37,24 @@ int main() {
 }
 
 struct node_t *string_to_list(char *s) {
-   
+    int count = 1;
+    struct node_t *head = NULL;
+
+    for (int i = 0; s[i] != '\0'; i++) {
+        if (s[i] != s[i+1]) {
+            head = insert_on_tail(head, s[i], count);
+            count = 0;
+        }
+        count++;
+    }
+    return head;
 }
 
 struct node_t *insert_on_tail(struct node_t *head, char c, int value) {
     struct node_t *node = (struct node_t *)malloc(sizeof(struct node_t));
+    if (node == NULL) {
+        printf("error");
+    }
     node->c = c;
     node->count = value;
     node->next = NULL;
@@ -60,5 +73,11 @@ struct node_t *insert_on_tail(struct node_t *head, char c, int value) {
 }
 
 void print_list(struct node_t *head) {
-    
+    while (head != NULL) {
+        for (int i = 0; i < head->count; i++) {
+            printf("%c", head->c);
+        }
+        printf(" ");
+        head = head->next;
+    }
 }

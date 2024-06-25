@@ -157,6 +157,30 @@ build CMakeFiles/untitled1.dir/quiz/sim3_3.c.o: C_COMPILER__untitled1_unscanned_
   OBJECT_DIR = CMakeFiles/untitled1.dir
   OBJECT_FILE_DIR = CMakeFiles/untitled1.dir/quiz
 
+build CMakeFiles/untitled1.dir/quiz/quiz16.c.o: C_COMPILER__untitled1_unscanned_Debug /home/giorgia/CLionProjects/esercizi/c/quiz/quiz16.c || cmake_object_order_depends_target_untitled1
+  DEP_FILE = CMakeFiles/untitled1.dir/quiz/quiz16.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled1.dir/quiz
+
+build CMakeFiles/untitled1.dir/quiz/quiz17_1.c.o: C_COMPILER__untitled1_unscanned_Debug /home/giorgia/CLionProjects/esercizi/c/quiz/quiz17_1.c || cmake_object_order_depends_target_untitled1
+  DEP_FILE = CMakeFiles/untitled1.dir/quiz/quiz17_1.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled1.dir/quiz
+
+build CMakeFiles/untitled1.dir/quiz/quiz17_2.c.o: C_COMPILER__untitled1_unscanned_Debug /home/giorgia/CLionProjects/esercizi/c/quiz/quiz17_2.c || cmake_object_order_depends_target_untitled1
+  DEP_FILE = CMakeFiles/untitled1.dir/quiz/quiz17_2.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled1.dir/quiz
+
+build CMakeFiles/untitled1.dir/quiz/quiz17_3.c.o: C_COMPILER__untitled1_unscanned_Debug /home/giorgia/CLionProjects/esercizi/c/quiz/quiz17_3.c || cmake_object_order_depends_target_untitled1
+  DEP_FILE = CMakeFiles/untitled1.dir/quiz/quiz17_3.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/untitled1.dir
+  OBJECT_FILE_DIR = CMakeFiles/untitled1.dir/quiz
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target untitled1
@@ -165,7 +189,7 @@ build CMakeFiles/untitled1.dir/quiz/sim3_3.c.o: C_COMPILER__untitled1_unscanned_
 #############################################
 # Link the executable untitled1
 
-build untitled1: C_EXECUTABLE_LINKER__untitled1_Debug CMakeFiles/untitled1.dir/main.c.o CMakeFiles/untitled1.dir/divisione_rico.c.o CMakeFiles/untitled1.dir/restodiv_rico.c.o CMakeFiles/untitled1.dir/ciframax_roco.c.o CMakeFiles/untitled1.dir/doppie_rico.c.o CMakeFiles/untitled1.dir/countdoppie.c.o CMakeFiles/untitled1.dir/palindroma_rico.c.o CMakeFiles/untitled1.dir/monotona_rico.c.o CMakeFiles/untitled1.dir/ordinamento.c.o CMakeFiles/untitled1.dir/esercizi_guidati/conta_num.c.o CMakeFiles/untitled1.dir/esercizi_guidati/lista.c.o CMakeFiles/untitled1.dir/liste1.c.o CMakeFiles/untitled1.dir/liste2.c.o CMakeFiles/untitled1.dir/liste3.c.o CMakeFiles/untitled1.dir/lista4e.c.o CMakeFiles/untitled1.dir/liste5e.c.o CMakeFiles/untitled1.dir/quiz/sim3_2.c.o CMakeFiles/untitled1.dir/quiz/sim3_3.c.o
+build untitled1: C_EXECUTABLE_LINKER__untitled1_Debug CMakeFiles/untitled1.dir/main.c.o CMakeFiles/untitled1.dir/divisione_rico.c.o CMakeFiles/untitled1.dir/restodiv_rico.c.o CMakeFiles/untitled1.dir/ciframax_roco.c.o CMakeFiles/untitled1.dir/doppie_rico.c.o CMakeFiles/untitled1.dir/countdoppie.c.o CMakeFiles/untitled1.dir/palindroma_rico.c.o CMakeFiles/untitled1.dir/monotona_rico.c.o CMakeFiles/untitled1.dir/ordinamento.c.o CMakeFiles/untitled1.dir/esercizi_guidati/conta_num.c.o CMakeFiles/untitled1.dir/esercizi_guidati/lista.c.o CMakeFiles/untitled1.dir/liste1.c.o CMakeFiles/untitled1.dir/liste2.c.o CMakeFiles/untitled1.dir/liste3.c.o CMakeFiles/untitled1.dir/lista4e.c.o CMakeFiles/untitled1.dir/liste5e.c.o CMakeFiles/untitled1.dir/quiz/sim3_2.c.o CMakeFiles/untitled1.dir/quiz/sim3_3.c.o CMakeFiles/untitled1.dir/quiz/quiz16.c.o CMakeFiles/untitled1.dir/quiz/quiz17_1.c.o CMakeFiles/untitled1.dir/quiz/quiz17_2.c.o CMakeFiles/untitled1.dir/quiz/quiz17_3.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/untitled1.dir
   POST_BUILD = :
