@@ -1,0 +1,146 @@
+#include <string.h>
+
+Funzioni di Manipolazione delle Stringhe
+
+    strlen
+
+        Prototipo: size_t strlen(const char *str);
+        Descrizione: Restituisce la lunghezza della stringa str, escludendo il byte nullo di terminazione ('\0').
+
+
+    strcpy
+
+        Prototipo: char *strcpy(char *dest, const char *src);
+        Descrizione: Copia la stringa src in dest, inclusi il byte nullo di terminazione.
+
+
+    strncpy
+
+        Prototipo: char *strncpy(char *dest, const char *src, size_t n);
+        Descrizione: Copia fino a n caratteri dalla stringa src a dest.
+                     Se src è più corta di n caratteri, il resto di dest viene riempito con byte nulli.
+
+
+    strcat
+
+        Prototipo: char *strcat(char *dest, const char *src);
+        Descrizione: Aggiunge la stringa src alla stringa dest, sovrascrivendo il byte nullo di terminazione di dest e aggiungendo un nuovo byte nullo di terminazione.
+
+
+    strncat
+
+        Prototipo: char *strncat(char *dest, const char *src, size_t n);
+        Descrizione: Aggiunge fino a n caratteri dalla stringa src alla stringa dest e aggiunge un byte nullo di terminazione.
+
+
+    strcmp
+
+        Prototipo: int strcmp(const char *str1, const char *str2);
+        Descrizione: Confronta la stringa str1 con str2.
+                     Restituisce un intero minore, uguale o maggiore di zero se str1 risulta essere rispettivamente minore, uguale o maggiore di str2.
+
+
+    strncmp
+
+        Prototipo: int strncmp(const char *str1, const char *str2, size_t n);
+        Descrizione: Confronta fino a n caratteri della stringa str1 con str2.
+
+
+    strchr
+
+        Prototipo: char *strchr(const char *str, int c);
+        Descrizione: Restituisce un puntatore alla prima occorrenza del carattere c nella stringa str oppure NULL se il carattere non viene trovato.
+
+
+    strrchr
+
+        Prototipo: char *strrchr(const char *str, int c);
+        Descrizione: Restituisce un puntatore all'ultima occorrenza del carattere c nella stringa str oppure NULL se il carattere non viene trovato.
+
+
+
+Funzioni di Manipolazione della Memoria
+
+    memcpy
+
+        Prototipo: void *memcpy(void *dest, const void *src, size_t n);
+        Descrizione: Copia n byte dall'area di memoria src all'area di memoria dest.
+                     Le aree di memoria non devono sovrapporsi.
+
+
+    memmove
+
+        Prototipo: void *memmove(void *dest, const void *src, size_t n);
+        Descrizione: Copia n byte dall'area di memoria src all'area di memoria dest.
+                     Le aree di memoria possono sovrapporsi.
+
+
+    memset
+
+        Prototipo: void *memset(void *s, int c, size_t n);
+        Descrizione: Riempie i primi n byte dell'area di memoria puntata da s con il byte costante c.
+
+
+    memcmp
+
+        Prototipo: int memcmp(const void *s1, const void *s2, size_t n);
+        Descrizione: Confronta i primi n byte delle aree di memoria s1 e s2.
+                     Restituisce un intero minore, uguale o maggiore di zero se s1 risulta essere rispettivamente minore, uguale o maggiore di s2.
+
+
+    memchr
+
+        Prototipo: void *memchr(const void *s, int c, size_t n);
+        Descrizione: Scansiona i primi n byte dell'area di memoria puntata da s per il carattere c.
+                     La prima occorrenza di c (interpretata come un unsigned char) viene restituita come puntatore.
+
+
+
+
+
+
+Esempio di Utilizzo
+
+            #include <stdio.h>
+            #include <string.h>
+
+            int main() {
+                char str1[20] = "Ciao";
+                char str2[20] = "Mondo";
+                char str3[40];
+
+                // Copia str1 in str3
+                strcpy(str3, str1);
+                printf("str3 dopo strcpy: %s\n", str3);
+
+                // Concatenazione di str2 in str3
+                strcat(str3, str2);
+                printf("str3 dopo strcat: %s\n", str3);
+
+                // Lunghezza di str3
+                printf("Lunghezza di str3: %lu\n", strlen(str3));
+
+                // Confronta str1 e str2
+                int risultato = strcmp(str1, str2);
+                if (risultato == 0) {
+                    printf("str1 e str2 sono uguali\n");
+                } else if (risultato < 0) {
+                    printf("str1 è minore di str2\n");
+                } else {
+                    printf("str1 è maggiore di str2\n");
+                }
+
+                // Imposta tutti i caratteri in str3 a 'X'
+                memset(str3, 'X', strlen(str3));
+                printf("str3 dopo memset: %s\n", str3);
+
+                return 0;
+            }
+
+In questo programma, abbiamo:
+
+- Copiato str1 in str3 usando strcpy.
+- Concatenato str2 a str3 usando strcat.
+- Trovato la lunghezza di str3 usando strlen.
+- Confrontato str1 e str2 usando strcmp.
+- Impostato tutti i caratteri in str3 a 'X' usando memset.

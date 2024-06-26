@@ -26,17 +26,54 @@ Input	                                Result
 */
 
 #include<stdio.h>
-#include<string.h>
-#define FNAME "testo.txt"
-#define MAXS 15
-#define SOGLIA 3
+#define DIM 10
 
-int main(){
-    int ok, i;
-    FILE *fp;
-    char p[MAXS+1];
+/* prototipi */
+int crea(int *,int *);
+int somma(int);
 
-    fp=fopen(FNAME,"r");
+int main() {
+    int ar1[DIM], ar2[DIM], i,r;
+    for(i=0; i<DIM; i++){
+        scanf("%d",&ar1[i]);
+    }
+    r=crea(ar1,ar2);
+    printf("%d",r);
+
+    return (0);
+}
 
 
+int crea (int a1[], int a2[]) {
+    int n, k = 0, skip = 0;
+    for (int i = 0; i < DIM; i++) {
+        n = somma(a1[i]);
+        for (int j = 0; j < k; j++) {
+            if (a2[j] == n) {
+                skip = 1;
+                break;
+            }
+        }
+
+        if (skip == 0) {
+            a2[k] = n;
+            k++;
+        }
+
+        skip = 0;
+    }
+
+/*    for (int i = 0; i < DIM; i++)
+        printf("%d ", a2[i]);
+
+    printf("\n");*/
+
+    return k;
+}
+
+int somma (int n) {
+    if (n < 10) {
+        return n;
+    }
+    return (n%10 + somma(n/10));
 }
