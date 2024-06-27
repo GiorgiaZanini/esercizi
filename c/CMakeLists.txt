@@ -25,4 +25,7 @@ add_executable(untitled1 main.c
         quiz/quiz17_1.c
         quiz/quiz17_2.c
         quiz/quiz17_3.c
+        quiz/quiz18_1.c
+        quiz/quiz18_2.c
+        quiz/quiz18_3.c
 )
