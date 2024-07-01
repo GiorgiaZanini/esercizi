@@ -73,7 +73,10 @@
 				21,
 				22,
 				23,
-				24
+				24,
+				25,
+				26,
+				27
 			]
 		}
 	],
@@ -130,7 +133,10 @@
 				21,
 				22,
 				23,
-				24
+				24,
+				25,
+				26,
+				27
 			]
 		}
 	],
@@ -284,6 +290,24 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "quiz/quiz18_3.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "quiz/18_3.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "array_e.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "array_e2.c",
 			"sourceGroupIndex" : 0
 		}
 	],

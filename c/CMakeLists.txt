@@ -28,4 +28,7 @@ add_executable(untitled1 main.c
         quiz/quiz18_1.c
         quiz/quiz18_2.c
         quiz/quiz18_3.c
+        quiz/18_3.c
+        array_e.c
+        array_e2.c
 )

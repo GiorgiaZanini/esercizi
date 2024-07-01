@@ -47,12 +47,58 @@ int main(){
 int parola_valida(char *s1, int n, int k){
     int i, count = 0;
     for (i = 0; s1[i] != '\0'; i++) {
-                
+        if (s1[i] >= '0' && s1[i] <= '9') {
+            count++;
+        }
     }
 
+    if (i < n || count < k) {
+        return 0;
+    }
+    return 1;
 }
 
+// apre il file "origin.txt"
+// restituisce il numero delle parole valide (parola_valida)
 int conta_valide(int n, int k){
+    FILE *f = NULL;
+    char s[DIM+1];
+    int valida, count = 0;
+
+    f = fopen("file/origin.txt", "r");
+    if (f == NULL) {
+        return -1;
+    }
+
+    while (fscanf(f, "%s", s) == 1) {
+        valida = parola_valida(s, n, k);
+        if (valida == 1) {
+            count++;
+        }
+    }
+
+    fclose(f);
+
+    return count;
+}
+
+
+/*
+
+int incrementa (int* a) {
+    a = a+1;
+    return 1; //successo
+}
+
+int test () {
+    int a = 0;
+
+    if (incrementa(a) == 1) {
+        a = incrementa(a);
+        return a;
+    }
 
 
 }
+
+ */
