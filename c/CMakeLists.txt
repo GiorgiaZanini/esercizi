@@ -31,4 +31,5 @@ add_executable(untitled1 main.c
         quiz/18_3.c
         array_e.c
         array_e2.c
+        liste_e.c
 )
