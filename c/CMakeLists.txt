@@ -32,4 +32,6 @@ add_executable(untitled1 main.c
         array_e.c
         array_e2.c
         liste_e.c
+        liste7.c
+        puntatori.c
 )
