@@ -112,7 +112,22 @@ struct list * inserimento_ordinato (struct list *testa, int numero_da_inserire) 
 }
 
 struct list * eliminazione_nodo (struct list *testa, int numero_da_eliminare) {
-    
+    if (testa == NULL) {
+        return testa;
+    }
+
+    struct list *nodo_da_eliminare = NULL;
+    struct list *nodo_corrente = testa;
+
+    while ((nodo_corrente->next->val != numero_da_eliminare) && (nodo_corrente->next != NULL)) {
+        nodo_corrente = nodo_corrente->next;
+    }
+
+    nodo_da_eliminare = nodo_corrente->next;
+    nodo_corrente->next = nodo_corrente->next->next;
+    free(nodo_da_eliminare);
+
+    return testa;
 }
 
 void free_list (struct list *testa) {
@@ -176,12 +191,11 @@ int main() {
     for (int i = 0; i < DIM-1; i++) {
         testa4 = inserisci_in_coda(testa4, array4[i]);
     }
-
     printf("\n");
-    print_list(testa3);
+    print_list(testa4);
     int numero_da_rimuovere = 3;
 //    scanf("%d", &numero_da_rimuovere);
-    testa4 = eliminazione_nodo(testa3, numero_da_rimuovere);
+    testa4 = eliminazione_nodo(testa4, numero_da_rimuovere);
     printf("\n");
     print_list(testa4);
 
@@ -192,6 +206,7 @@ int main() {
     free_list(testa);
     free_list(testa2);
     free_list(testa3);
+    free_list(testa4);
 
     return 0;
 }
