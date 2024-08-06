@@ -4,10 +4,10 @@
 # ld -o hello.x hello.o
 # ./hello.x
 
-#codice compilato per sistemi 32 bit
-#as prova1.s -32 -o prova1.o
-#ld prova1.o -m elf_i386 -o prova1.x
-#./prova1.x
+# codice compilato per sistemi 32 bit
+# as prova1.s -32 -o prova1.o
+# ld prova1.o -m elf_i386 -o prova1.x
+# ./prova1.x
 
 .section .data 
 

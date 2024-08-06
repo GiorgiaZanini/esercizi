@@ -79,19 +79,6 @@ void print_list (struct list *testa) {
 }
 
 struct list * inserimento_ordinato (struct list *testa, int numero_da_inserire) {
-    if (testa == NULL) {
-        testa = (struct list *) malloc(sizeof(struct list));
-        if (testa == NULL) {
-            printf("errore nell'allocazione del nodo\n");
-            return testa;
-        }
-
-        testa->val = numero_da_inserire;
-        testa->next = NULL;
-
-        return testa;
-    }
-
     struct list *nodo_da_aggiungere = NULL;
     nodo_da_aggiungere = (struct list *) malloc(sizeof(struct list));
     if (nodo_da_aggiungere == NULL) {
@@ -99,9 +86,18 @@ struct list * inserimento_ordinato (struct list *testa, int numero_da_inserire) 
         return testa;
     }
     nodo_da_aggiungere->val = numero_da_inserire;
+    nodo_da_aggiungere->next = NULL;
 
     struct list *nodo_corrente = testa;
-    while ((nodo_corrente->next->val < numero_da_inserire) && (nodo_corrente->next != NULL)) {
+    if (testa == NULL) {
+        nodo_da_aggiungere->next = nodo_corrente;
+        return nodo_da_aggiungere;
+    } else if (nodo_corrente->val > numero_da_inserire) {
+        nodo_da_aggiungere->next = nodo_corrente;
+        return nodo_da_aggiungere;
+    }
+
+    while ((nodo_corrente->next != NULL) && (nodo_corrente->next->val < numero_da_inserire)) {      // TODO probabile errore
         nodo_corrente = nodo_corrente->next;
     }
 
@@ -161,11 +157,36 @@ void free_list (struct list *testa) {
     }
 }
 
-int main() {
-    int array[DIM] = {2, 9, 0, 1,6,7,3, 4, 8, 5};
-    int array2[DIM] = {2, 9, 0, 1,6,7,3, 4, 8, 5};
 
-    int array3[DIM-1] = {0,1,2,4,5,6,7,8,9};
+struct list * ordina_lista_crescente (struct list *testa) {
+// ordina la lista creando una nuova lista
+    if (testa == NULL) {
+        return testa;
+    }
+
+    struct list *nodo_corrente_lista_da_riordinare = testa;
+    struct list *nuova_testa = NULL;
+
+    while (nodo_corrente_lista_da_riordinare->next != NULL) {
+        nuova_testa = inserimento_ordinato(nuova_testa, nodo_corrente_lista_da_riordinare->next->val);      // TODO probabile errore nella funzione
+        nodo_corrente_lista_da_riordinare = nodo_corrente_lista_da_riordinare->next;
+    }
+
+    free_list(testa);
+
+    return nuova_testa;
+}
+
+struct list * ordina_lista_decrescente (struct list *testa) {
+
+}
+
+
+int main() {
+    int array[DIM] = {2,9,0,1,6,7,3,4,8,5};
+    int array2[DIM] = {2,9,0,1,6,7,3,4,8,5};
+
+    int array3[DIM-1] = {1,2, 3,4,5,6,7,8,9};
     int array4[DIM+1] = {0,1,2,3,3,4,5,6,7,8,9};
     int array5[DIM+2] = {0,1,2,3,3,4,5,3,6,7,8,9};
 
@@ -187,12 +208,13 @@ int main() {
         testa2 = inserisci_in_coda(testa2, array2[i]);
     }
 
+    printf("crea lista con inserimento in testa");
     print_list(testa);
-    printf("\n\n");
+    printf("\n\ncrea lista con inserimento in testa\n");
     print_list(testa2);
 
 
-    printf("\n");
+    printf("\n\ninserimento ordinato");
 
     // da lista già ordinata, inserimento ordinato di un numero
     struct list *testa3 = NULL;
@@ -201,14 +223,14 @@ int main() {
     }
     printf("\n");
     print_list(testa3);
-    int numero_da_inserire = 3;
+    int numero_da_inserire = 10;
 //    scanf("%d", &numero_da_inserire);
     testa3 = inserimento_ordinato(testa3, numero_da_inserire);
     printf("\n");
     print_list(testa3);
 
 
-    printf("\n");
+    printf("\n\neliminazione di un nodo dato un numero");
 
     // eliminazione di un nodo, dato un numero
     struct list *testa4 = NULL;
@@ -224,7 +246,7 @@ int main() {
     print_list(testa4);
 
 
-    printf("\n");
+    printf("\n\neliminazione di tutti i nodi che contengono un dato numero");
 
     // eliminazione di tutti i nodi che contengono un dato numero
     struct list *testa5 = NULL;
@@ -238,11 +260,14 @@ int main() {
     print_list(testa5);
 
 
-    printf("\n");
+    printf("\n\nordinamento lista 1\n");
 
     // ordinamento lista
-    
-
+    testa = ordina_lista_crescente(testa);
+    print_list(testa);
+    printf("\n");
+    testa2 = ordina_lista_decrescente(testa2);
+    print_list(testa2);
 
 
     free_list(testa);
